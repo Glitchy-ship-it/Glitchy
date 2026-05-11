@@ -1,25 +1,17 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 from mlxtend.preprocessing import TransactionEncoder
 from mlxtend.frequent_patterns import apriori, association_rules
 
-transactions = [
-    ["milk", "bread", "Butter"],
-    ["bread", "Butter", "jam"],
-    ["milk", "bread"],
-    ["milk", "bread", "Butter", "eggs"],
-    ["bread", "eggs"],
-    ["milk", "Butter"],
-    ["milk", "bread", "Butter"],
-    ["bread", "jam"],
-    ["milk", "bread", "jam"],
-    ["Butter", "jam"],
-    ["milk", "eggs", "bread"],
-    ["bread", "Butter", "eggs"],
-    ["milk", "bread", "Butter", "jam"],
-    ["eggs", "bread"],
-    ["milk", "Butter", "jam"]
-]
+products = ["milk", "bread", "butter", "jam", "eggs"]
+
+transactions = []
+
+for i in range (15):
+    basket_size = np.random.randint(2,5)
+    basket = [str(item) for item in np.random.choice(products, size=basket_size, replace=False)]
+    transactions.append(basket)
 
 clean_transaction = []
 
