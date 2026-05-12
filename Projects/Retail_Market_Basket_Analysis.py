@@ -71,7 +71,7 @@ print(strong_rules[["antecedents", "consequents", "support", "confidence", "lift
 
 print("\nRecommendations:")
 
-for index, row in strong_rules.iterrows():
+for i, row in strong_rules.iterrows():
     antecedent = list(row["antecedents"])
     consequent = list(row["consequents"])
 
