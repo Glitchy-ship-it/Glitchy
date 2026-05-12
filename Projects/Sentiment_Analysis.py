@@ -21,7 +21,7 @@ data = {
         "Excellent customer support and smooth service",
         "The item arrived earlier than expected",
         "Very good quality for the price",
-        "I would definitely buy this again",
+        "Amazing product and I would definitely buy this again",
         "The product exceeded my expectations",
         "The app was easy to use",
         "The refund process was quick and smooth",
@@ -155,7 +155,9 @@ new_predictions = model.predict(new_reviews_vectorized)
 
 print("\nNew Reviews Predictions : ")
 
-for i, review in enumerate(new_reviews):
-    print(f"Review : {review}")
-    print(f"Predicted Sentiment : {new_predictions[i]}")
-    print()
+final_table = pd.DataFrame({
+    "Reviews" : new_reviews,
+    "Predicted Sentiment" : new_predictions
+})
+
+print(final_table)
